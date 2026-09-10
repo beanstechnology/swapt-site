@@ -99,7 +99,38 @@
     padding:0 1.5rem 2rem;
     color:#67666f;font-weight:600;font-size:.9rem;
     font-family:"Baloo 2",system-ui,sans-serif;
+    display:flex;justify-content:center;align-items:center;gap:.6rem;
   }
+  .privacy-link{
+    background:none;border:none;cursor:pointer;
+    font:inherit;color:#9a99a6;padding:.2rem;
+  }
+  .privacy-link:hover{color:var(--text)}
+  .foot-sep{color:#3a3a44}
+  .modal{
+    position:fixed;inset:0;z-index:50;
+    background:rgba(0,0,0,.6);
+    display:flex;align-items:center;justify-content:center;
+    padding:1.2rem;
+  }
+  .modal[hidden]{display:none}
+  .modal-box{
+    position:relative;
+    width:min(46rem,100%);
+    height:min(85svh,100%);
+    background:#fff;
+    border-radius:1rem;
+    overflow:hidden;
+  }
+  .modal-box iframe{width:100%;height:100%;border:0;display:block}
+  .modal-close{
+    position:absolute;top:.7rem;right:.7rem;z-index:2;
+    width:2.2rem;height:2.2rem;border-radius:50%;
+    border:none;cursor:pointer;
+    background:rgba(0,0,0,.45);color:#fff;
+    font-size:1rem;line-height:1;
+  }
+  .modal-close:hover{background:rgba(0,0,0,.7)}
 
   @media (prefers-reduced-motion:no-preference){
     .hero > *{opacity:0;transform:translateY(.5rem);animation:in .6s ease forwards}
@@ -137,6 +168,29 @@
 
   <p class="seal">A match is a conversation. <strong>A swapt is a deal.</strong> Nothing is final until you both say so.</p>
 </main>
-<footer>© 2026 Swapt</footer>
+<footer>
+  <button class="privacy-link" id="openPrivacy">Privacy Policy</button>
+  <span class="foot-sep">·</span>
+  <span>© 2026 Swapt</span>
+</footer>
+
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" hidden>
+  <div class="modal-box">
+    <button class="modal-close" id="closePrivacy" aria-label="Close">✕</button>
+    <iframe src="privacy.html" title="Swapt Privacy Policy"></iframe>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('privacyModal');
+  const openBtn = document.getElementById('openPrivacy');
+  const closeBtn = document.getElementById('closePrivacy');
+  function openM(){ modal.hidden = false; document.body.style.overflow = 'hidden'; }
+  function closeM(){ modal.hidden = true; document.body.style.overflow = ''; }
+  openBtn.addEventListener('click', openM);
+  closeBtn.addEventListener('click', closeM);
+  modal.addEventListener('click', e => { if (e.target === modal) closeM(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeM(); });
+</script>
 </body>
 </html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Swapt</title>
+<meta name="description" content="How Swapt collects, uses, and protects your personal information, including your rights under PIPEDA and the GDPR.">
+<style>
+  :root{
+    --ink:#16181D;
+    --paper:#FFFFFF;
+    --cloud:#F4F5F7;
+    --line:#E6E8EC;
+    --muted:#6A6F80;
+    --sub:#8A909C;
+    --brand:#B23AD6;
+    --brand-2:#8B3FE8;
+    --brand-pink:#D6306E;
+    --focus:#8B3FE8;
+    --maxw:720px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cloud);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px;}
+
+  /* Masthead */
+  .masthead{
+    background:linear-gradient(135deg,var(--brand-2) 0%,var(--brand-pink) 100%);
+    color:#fff;
+    padding:56px 20px 48px;
+  }
+  .masthead .wrap{max-width:var(--maxw);margin:0 auto;}
+  .logo{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:800;font-size:20px;letter-spacing:-0.02em;margin-bottom:28px;
+  }
+  .logo .mark{
+    width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.18);
+    display:grid;place-items:center;font-size:17px;
+  }
+  .masthead h1{
+    margin:0 0 12px;font-size:clamp(30px,6vw,44px);line-height:1.1;
+    letter-spacing:-0.03em;font-weight:800;
+  }
+  .masthead .lede{margin:0;font-size:17px;max-width:56ch;color:rgba(255,255,255,.9);}
+  .meta{
+    margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 20px;
+    font-size:14px;color:rgba(255,255,255,.82);
+  }
+  .meta b{color:#fff;font-weight:600;}
+
+  /* Layout */
+  .page{max-width:var(--maxw);margin:0 auto;padding:0 20px 80px;}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    margin-top:24px;padding:32px;
+  }
+  @media(max-width:520px){.card{padding:22px;}.masthead{padding:40px 18px 36px;}}
+
+  /* Summary box */
+  .summary{margin-top:28px;}
+  .summary h2{margin-top:0;}
+  .summary ul{margin:0;padding-left:20px;}
+  .summary li{margin:8px 0;}
+
+  /* TOC */
+  .toc ol{margin:0;padding-left:22px;columns:2;column-gap:32px;}
+  @media(max-width:520px){.toc ol{columns:1;}}
+  .toc li{margin:6px 0;break-inside:avoid;}
+  .toc a{color:var(--ink);}
+  .toc a:hover{color:var(--brand);}
+
+  h2{font-size:22px;letter-spacing:-0.02em;margin:0 0 14px;line-height:1.25;}
+  h3{font-size:17px;margin:26px 0 8px;letter-spacing:-0.01em;}
+  section{scroll-margin-top:20px;}
+  .num{
+    color:var(--brand);font-variant-numeric:tabular-nums;font-weight:700;
+    margin-right:10px;
+  }
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 14px;padding-left:22px;}
+  li{margin:6px 0;}
+  strong{font-weight:650;}
+
+  /* Data table */
+  .tablewrap{overflow-x:auto;margin:0 0 14px;border:1px solid var(--line);border-radius:12px;}
+  table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px;}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--cloud);font-weight:650;}
+  tr:last-child td{border-bottom:none;}
+
+  /* Placeholder highlight */
+  .fill{
+    background:#FFF3D6;border-bottom:1px dashed #C99A2E;
+    padding:0 3px;border-radius:3px;font-weight:600;color:#7a5a12;
+  }
+  .note{
+    background:var(--cloud);border-left:3px solid var(--brand);
+    padding:14px 16px;border-radius:0 10px 10px 0;margin:0 0 14px;font-size:14.5px;color:var(--muted);
+  }
+
+  footer{max-width:var(--maxw);margin:0 auto;padding:32px 20px 60px;color:var(--sub);font-size:13.5px;text-align:center;}
+  footer a{color:var(--sub);text-decoration:underline;}
+
+  @media print{
+    body{background:#fff;}
+    .masthead{background:none;color:#000;padding:0 0 20px;border-bottom:2px solid #000;}
+    .masthead .lede,.meta{color:#333;}
+    .card{border:none;padding:16px 0;margin-top:8px;}
+    .toc{display:none;}
+    a{color:#000;text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="logo"><span class="mark">↔</span> Swapt</div>
+    <h1>Privacy Policy</h1>
+    <p class="lede">Swapt is a place to trade the things you own for the things you want. This policy explains what we collect, why, and the choices and rights you have — including under Canada's PIPEDA and the EU/UK GDPR.</p>
+    <div class="meta">
+      <span><b>Effective date:</b> <span class="fill">[DATE]</span></span>
+      <span><b>Last updated:</b> <span class="fill">[DATE]</span></span>
+      <span><b>Version:</b> 1.0</span>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="note card" style="margin-top:24px;">
+    Text highlighted like <span class="fill">[THIS]</span> is a placeholder for you to replace before publishing — company name, addresses, contact emails, dates, and the name of your privacy officer or EU/UK representative.
+  </div>
+
+  <!-- SUMMARY -->
+  <section class="card summary" id="summary" aria-label="Summary">
+    <h2>The short version</h2>
+    <ul>
+      <li><strong>What we collect:</strong> your account details (name, email), the items and photos you post, your messages with other users, an approximate location for the distance filter, and basic device and usage data.</li>
+      <li><strong>Why:</strong> to run the swapping service — showing you nearby items, creating matches, and letting matched users message each other.</li>
+      <li><strong>We don't sell your personal information</strong>, and we don't run third-party advertising inside Swapt.</li>
+      <li><strong>No payments:</strong> Swapt is for bartering items. We don't process payments or collect card details. Any values shown are user estimates, not prices.</li>
+      <li><strong>Your rights:</strong> you can access, correct, delete, or export your data, and withdraw consent. See <a href="#your-rights">Your rights</a>.</li>
+      <li><strong>Contact:</strong> <span class="fill">[privacy@swapt.app]</span>.</li>
+    </ul>
+  </section>
+
+  <!-- TOC -->
+  <nav class="card toc" id="contents" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#scope">Scope of this policy</a></li>
+      <li><a href="#what-we-collect">Information we collect</a></li>
+      <li><a href="#how-we-use">How we use your information</a></li>
+      <li><a href="#legal-bases">Legal bases &amp; consent</a></li>
+      <li><a href="#sharing">How we share information</a></li>
+      <li><a href="#service-providers">Service providers</a></li>
+      <li><a href="#location">Location information</a></li>
+      <li><a href="#other-users">Information visible to other users</a></li>
+      <li><a href="#retention">How long we keep data</a></li>
+      <li><a href="#security">How we protect your data</a></li>
+      <li><a href="#transfers">International data transfers</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#pipeda">Your PIPEDA rights (Canada)</a></li>
+      <li><a href="#gdpr">Your GDPR rights (EU/UK)</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#cookies">Cookies &amp; similar technologies</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact &amp; complaints</a></li>
+    </ol>
+  </nav>
+
+  <div class="card">
+
+  <section id="who-we-are">
+    <h2><span class="num">1</span>Who we are</h2>
+    <p>Swapt (“<strong>Swapt</strong>,” “<strong>we</strong>,” “<strong>us</strong>,” or “<strong>our</strong>”) is a mobile-first application that lets people list items they own and swap them with other users through a swipe-and-match flow. This policy is issued by <span class="fill">[LEGAL COMPANY NAME]</span>, located at <span class="fill">[COMPANY ADDRESS]</span>.</p>
+    <p>For the purposes of data-protection law, <span class="fill">[LEGAL COMPANY NAME]</span> is the <strong>data controller</strong> (GDPR) and the <strong>organization responsible</strong> (PIPEDA) for the personal information described here. Our privacy officer can be reached at <span class="fill">[privacy@swapt.app]</span>.</p>
+  </section>
+
+  <section id="scope">
+    <h2><span class="num">2</span>Scope of this policy</h2>
+    <p>This policy applies to the Swapt mobile app, any related websites we operate, and the accounts, listings, matches, and messages created through them (together, the “<strong>Service</strong>”). It does not cover third-party services you might reach from Swapt — for example, if you choose to add a link to your Instagram, Facebook, or X profile, those platforms have their own privacy policies that govern what happens once you leave Swapt.</p>
+  </section>
+
+  <section id="what-we-collect">
+    <h2><span class="num">3</span>Information we collect</h2>
+    <p>We collect only what we need to run a swapping service. Here is everything, grouped by why we have it:</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Category</th><th>What it includes</th><th>Where it comes from</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account information</strong></td>
+            <td>Your display name, email address, and password (stored only as a secured credential by our authentication provider — we never see your password in plain text).</td>
+            <td>You, at sign-up.</td>
+          </tr>
+          <tr>
+            <td><strong>Profile information</strong></td>
+            <td>A location you type in (e.g. a city), your chosen search radius, and any social handles (Instagram, Facebook, X) you optionally add to your profile.</td>
+            <td>You, when you edit your profile.</td>
+          </tr>
+          <tr>
+            <td><strong>Item listings &amp; photos</strong></td>
+            <td>Titles, descriptions, categories, tags, an optional estimated value, and photos of the items you post. Photos are compressed and stored as part of your listing.</td>
+            <td>You, when you add an item.</td>
+          </tr>
+          <tr>
+            <td><strong>Swipes &amp; matches</strong></td>
+            <td>Which items you swiped right (want) or left (pass) on, and the matches created when two users want each other's items.</td>
+            <td>Generated by your activity.</td>
+          </tr>
+          <tr>
+            <td><strong>Messages</strong></td>
+            <td>The content and timestamps of messages you send to users you've matched with.</td>
+            <td>You and the users you message.</td>
+          </tr>
+          <tr>
+            <td><strong>Approximate device location</strong></td>
+            <td>If you enable the map view, your device's approximate coordinates, used to draw your search-radius circle. If you decline the browser/OS location prompt, we fall back to a default and the feature still works.</td>
+            <td>Your device, only with your permission.</td>
+          </tr>
+          <tr>
+            <td><strong>Device &amp; technical data</strong></td>
+            <td>Basic information needed to deliver and secure the app — such as device type, app version, and log/diagnostic data. On supported devices we may trigger short haptic vibration for feedback; this uses a device capability and does not collect data.</td>
+            <td>Automatically, as you use the app.</td>
+          </tr>
+          <tr>
+            <td><strong>Notifications</strong></td>
+            <td>In-app notifications about activity on your listings (for example, when someone swipes right on your item).</td>
+            <td>Generated by other users' activity.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">We do <strong>not</strong> collect payment or credit-card information, we do <strong>not</strong> run advertising or ad-tracking SDKs, and we do <strong>not</strong> knowingly collect special categories of data (such as health, ethnicity, or political views). Please don't post such information in listings or messages.</div>
+  </section>
+
+  <section id="how-we-use">
+    <h2><span class="num">4</span>How we use your information</h2>
+    <p>We use the information above to:</p>
+    <ul>
+      <li>Create and secure your account and authenticate you when you log in.</li>
+      <li>Show you other users' items to browse, filtered by your chosen distance radius.</li>
+      <li>Record your swipes, create matches when interest is mutual, and enable messaging between matched users.</li>
+      <li>Display your listings and profile to other users so swaps can happen.</li>
+      <li>Send you in-app notifications about relevant activity.</li>
+      <li>Maintain, troubleshoot, and improve the Service, and keep it safe from fraud, abuse, and misuse.</li>
+      <li>Comply with legal obligations and enforce our terms.</li>
+    </ul>
+    <p>We do not use your personal information to make decisions that produce legal or similarly significant effects about you through solely automated means.</p>
+  </section>
+
+  <section id="legal-bases">
+    <h2><span class="num">5</span>Legal bases &amp; consent</h2>
+    <p><strong>Under PIPEDA (Canada),</strong> we collect, use, and disclose personal information only for purposes a reasonable person would consider appropriate, and we rely on your consent. Consent may be express (for example, when you enable location) or implied (for example, when you post an item, you understand it will be shown to other users so a swap can happen). You may withdraw consent at any time, subject to legal or contractual limits — see <a href="#your-rights">Your rights</a>.</p>
+    <p><strong>Under the GDPR (EU/UK),</strong> we rely on the following legal bases:</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Purpose</th><th>Legal basis</th></tr></thead>
+        <tbody>
+          <tr><td>Creating your account, running listings, swipes, matches, and messaging</td><td>Performance of a contract (Art. 6(1)(b))</td></tr>
+          <tr><td>Securing the Service, preventing fraud/abuse, and improving the app</td><td>Legitimate interests (Art. 6(1)(f))</td></tr>
+          <tr><td>Accessing your device's approximate location for the map</td><td>Consent (Art. 6(1)(a)), which you can withdraw</td></tr>
+          <tr><td>Meeting legal obligations</td><td>Legal obligation (Art. 6(1)(c))</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="sharing">
+    <h2><span class="num">6</span>How we share information</h2>
+    <p>We share personal information only in these limited ways:</p>
+    <ul>
+      <li><strong>With other users:</strong> your display name, profile location, listings, and photos are visible to other users so swaps can happen. Once you match with someone, your messages are shared with that user. See <a href="#other-users">Information visible to other users</a>.</li>
+      <li><strong>With service providers</strong> who process data on our behalf under contract — see <a href="#service-providers">Service providers</a>.</li>
+      <li><strong>For legal reasons:</strong> where required by law, court order, or a valid legal request, or to protect the rights, safety, and security of users, the public, or Swapt.</li>
+      <li><strong>In a business transfer:</strong> if Swapt is involved in a merger, acquisition, financing, or sale of assets, information may be transferred as part of that transaction, subject to this policy.</li>
+    </ul>
+    <p><strong>We do not sell your personal information</strong>, and we do not share it with advertisers or data brokers.</p>
+  </section>
+
+  <section id="service-providers">
+    <h2><span class="num">7</span>Service providers</h2>
+    <p>We use a small number of trusted providers to operate the Service. They may process personal information only on our instructions and are bound by confidentiality and data-protection obligations. Our providers include:</p>
+    <ul>
+      <li><strong>Cloud hosting, authentication &amp; database</strong> — <span class="fill">[e.g. Google Firebase / Firestore]</span>, used to authenticate accounts and store your profile, listings, photos, matches, and messages.</li>
+      <li><span class="fill">[Add any others you use — e.g. crash reporting, hosting for this website, email delivery — or delete this line.]</span></li>
+    </ul>
+    <div class="note">Keep this list accurate. If you add analytics, crash-reporting, push-notification, or email tools later, add them here and review the international-transfer and cookies sections below.</div>
+  </section>
+
+  <section id="location">
+    <h2><span class="num">8</span>Location information</h2>
+    <p>Swapt uses location in two ways. First, you can <strong>type</strong> a location (like a city) into your profile — this is text you choose to share. Second, the optional map view can request your device's <strong>approximate coordinates</strong> from your browser or operating system to draw the circle that represents your search radius.</p>
+    <p>We only access device location after you grant permission through your device's standard prompt. If you decline, the map falls back to a default area and Swapt keeps working. You can turn location access off at any time in your device or browser settings.</p>
+  </section>
+
+  <section id="other-users">
+    <h2><span class="num">9</span>Information visible to other users</h2>
+    <p>Swapt is a community marketplace, so some information is meant to be seen by others:</p>
+    <ul>
+      <li>Your <strong>display name</strong> and <strong>profile location</strong>.</li>
+      <li>Any <strong>social handles</strong> you choose to add.</li>
+      <li>Your <strong>item listings</strong>, including photos, descriptions, and tags.</li>
+      <li>Your <strong>messages</strong>, which are shared with users you've matched with.</li>
+    </ul>
+    <p>Please treat photos, descriptions, and messages as information you're comfortable sharing with the people you might trade with. Avoid posting sensitive personal details in listings or chats.</p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">10</span>How long we keep data</h2>
+    <p>We keep personal information only as long as needed for the purposes in this policy:</p>
+    <ul>
+      <li><strong>Account, profile, and listings</strong> — for as long as your account is active.</li>
+      <li><strong>Matches and messages</strong> — while the account and the related match exist, so both users retain a usable conversation history.</li>
+      <li><strong>Diagnostic and log data</strong> — for a limited period needed to keep the Service secure and reliable.</li>
+    </ul>
+    <p>When you delete your account, we delete or anonymize your personal information within <span class="fill">[e.g. 30 days]</span>, except where we must retain certain records to meet legal obligations, resolve disputes, or enforce our agreements. Note that messages you sent may remain visible to the other participant unless they are also removed on their side.</p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">11</span>How we protect your data</h2>
+    <p>We apply technical and organizational safeguards appropriate to the sensitivity of the information, including encrypted connections (HTTPS/TLS) between the app and our backend, authentication controls, access restrictions to stored data, and reliance on established cloud infrastructure. Passwords are handled by our authentication provider and are never stored in plain text.</p>
+    <p>No method of transmission or storage is completely secure, so we cannot guarantee absolute security. If we become aware of a breach affecting your personal information, we will notify you and the relevant authorities where required by law — including, under the GDPR, the applicable supervisory authority without undue delay, and, under PIPEDA, the Office of the Privacy Commissioner of Canada and affected individuals where the breach poses a real risk of significant harm.</p>
+  </section>
+
+  <section id="transfers">
+    <h2><span class="num">12</span>International data transfers</h2>
+    <p>Swapt and our service providers may store and process your information in countries other than the one you live in, including <span class="fill">[e.g. the United States]</span>. Data-protection laws in those countries may differ from yours.</p>
+    <p>Where we transfer personal information out of the EU, UK, or Canada, we rely on appropriate safeguards — such as the European Commission's Standard Contractual Clauses (and the UK Addendum where relevant) — or another lawful transfer mechanism. Under PIPEDA, information handled by providers abroad may be accessible to the courts and authorities of those countries. You can contact us for more detail on the safeguards we use.</p>
+  </section>
+
+  <section id="your-rights">
+    <h2><span class="num">13</span>Your rights</h2>
+    <p>Depending on where you live, you have rights over your personal information. Many of these you can exercise directly in the app — editing your profile, updating or deleting listings, or deleting your account. For anything else, contact us at <span class="fill">[privacy@swapt.app]</span> and we'll respond within the timeframe required by law.</p>
+    <p>Common rights across both frameworks include the right to <strong>access</strong> the information we hold about you, to <strong>correct</strong> inaccurate information, to <strong>delete</strong> it, to <strong>withdraw consent</strong>, and to <strong>complain</strong> to a regulator. The two sections below set out the specifics.</p>
+  </section>
+
+  <section id="pipeda">
+    <h2><span class="num">14</span>Your PIPEDA rights (Canada)</h2>
+    <p>If you are in Canada, the <em>Personal Information Protection and Electronic Documents Act</em> gives you the right to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal information we hold about you and be told how it has been used and to whom it has been disclosed.</li>
+      <li><strong>Challenge the accuracy</strong> of your information and have it corrected.</li>
+      <li><strong>Withdraw consent</strong> to our collection, use, or disclosure of your information, subject to legal or contractual limits (withdrawing certain consents may mean parts of Swapt no longer work).</li>
+      <li><strong>Ask questions</strong> about our privacy practices and direct them to our privacy officer.</li>
+    </ul>
+    <p>To exercise these rights, contact our privacy officer at <span class="fill">[privacy@swapt.app]</span>. If you are not satisfied with our response, you may contact the <strong>Office of the Privacy Commissioner of Canada</strong> at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca</a> or 1-800-282-1376.</p>
+  </section>
+
+  <section id="gdpr">
+    <h2><span class="num">15</span>Your GDPR rights (EU/UK)</h2>
+    <p>If you are in the European Economic Area or the United Kingdom, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — obtain a copy of your personal data.</li>
+      <li><strong>Rectification</strong> — correct inaccurate or incomplete data.</li>
+      <li><strong>Erasure</strong> — have your data deleted (“right to be forgotten”) in certain circumstances.</li>
+      <li><strong>Restriction</strong> — limit how we process your data in certain circumstances.</li>
+      <li><strong>Data portability</strong> — receive data you provided in a structured, commonly used, machine-readable format, and have it transmitted to another controller where technically feasible.</li>
+      <li><strong>Object</strong> — object to processing based on our legitimate interests.</li>
+      <li><strong>Withdraw consent</strong> — at any time, where we rely on consent (such as location access), without affecting processing already carried out.</li>
+      <li><strong>Not be subject</strong> to solely automated decisions with legal or similarly significant effects (we don't carry out such decision-making).</li>
+    </ul>
+    <p>We will respond to requests within one month, as required by the GDPR. You also have the right to lodge a complaint with your local supervisory authority — in the UK, the Information Commissioner's Office (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>); in the EU, your national data-protection authority.</p>
+    <p><span class="fill">[If you are established outside the EU/UK but offer Swapt to people there, name your EU and/or UK representative and their contact details here, as required by Art. 27 GDPR.]</span></p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">16</span>Children's privacy</h2>
+    <p>Swapt is not directed to children. You must be at least <span class="fill">[16]</span> years old to use the Service (or the minimum age of digital consent in your country, if higher). We do not knowingly collect personal information from children below that age. If you believe a child has provided us with personal information, contact us at <span class="fill">[privacy@swapt.app]</span> and we will delete it.</p>
+  </section>
+
+  <section id="cookies">
+    <h2><span class="num">17</span>Cookies &amp; similar technologies</h2>
+    <p>The Swapt app uses local device storage and similar technologies that are strictly necessary to keep you logged in and to make core features work. We do not use advertising or cross-site tracking cookies inside the app.</p>
+    <p><span class="fill">[If this website uses any analytics or non-essential cookies, describe them here and link to a cookie banner/consent tool. If it uses none, state that this website uses only strictly necessary cookies.]</span></p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">18</span>Changes to this policy</h2>
+    <p>We may update this policy from time to time. When we make material changes, we'll update the “Last updated” date above and, where appropriate, notify you in the app or by email. Your continued use of Swapt after an update means you accept the revised policy, unless the change requires your fresh consent under applicable law — in which case we'll ask for it.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">19</span>Contact &amp; complaints</h2>
+    <p>For any privacy question, request, or complaint, contact:</p>
+    <p>
+      <strong>Swapt — Privacy Officer</strong><br>
+      <span class="fill">[LEGAL COMPANY NAME]</span><br>
+      <span class="fill">[COMPANY MAILING ADDRESS]</span><br>
+      Email: <a href="mailto:privacy@swapt.app"><span class="fill">[privacy@swapt.app]</span></a>
+    </p>
+    <p>We'll acknowledge your request and respond within the timeframe set by the law that applies to you. If we can't resolve your concern, you may contact the relevant regulator listed in the PIPEDA and GDPR sections above.</p>
+  </section>
+
+  </div><!-- /card -->
+
+</main>
+
+<footer>
+  <p>© <span class="fill">[YEAR]</span> <span class="fill">[LEGAL COMPANY NAME]</span>. All rights reserved. &nbsp;·&nbsp; <a href="#summary">Back to top</a></p>
+  <p>This document is provided for transparency and is not legal advice. Have it reviewed by qualified counsel before publishing.</p>
+</footer>
+
+</body>
+</html>
