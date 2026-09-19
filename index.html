@@ -17,10 +17,10 @@
     --paper: #F4F5F7;
     --muted: #8A8A94;
     --sub: #B8B8C4;
-    --you: #B23AD6;
-    --you-deep: #8B3FE8;
-    --them: #D6306E;
-    --them-deep: #D6306E;
+    --you: #b18cf5;
+    --you-deep: #8655e8;
+    --them: #7ce4f2;
+    --them-deep: #3fc4da;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -54,9 +54,9 @@
   .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--paper); }
   .logo {
     width: 40px; height: 40px; border-radius: 11px; flex: none;
-    background: linear-gradient(135deg, #8B3FE8 0%, #D6306E 100%);
+    background: linear-gradient(135deg, #9d6cec 0%, #70a8ed 100%);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 20px rgba(139,63,232,.35);
+    box-shadow: 0 6px 20px rgba(157,108,236,.35);
   }
   .brand .name { font-family: 'Luckiest Guy', 'Arial Black', sans-serif; font-size: 25px; letter-spacing: .5px; padding-top: 4px; }
   .nav-links { margin-left: auto; display: flex; align-items: center; gap: 28px; }
@@ -66,14 +66,14 @@
     font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px;
     border: none; cursor: pointer; border-radius: 999px; padding: 11px 22px;
     text-decoration: none; display: inline-block; line-height: 1.2;
-    background: linear-gradient(135deg, #8B3FE8 0%, #D6306E 100%);
-    color: #fff; box-shadow: 0 8px 22px rgba(139,63,232,.4);
+    background: linear-gradient(135deg, #9d6cec 0%, #70a8ed 100%);
+    color: #fff; box-shadow: 0 8px 22px rgba(157,108,236,.4);
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(139,63,232,.5); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(157,108,236,.5); }
   .btn:focus-visible { outline: 3px solid var(--them); outline-offset: 3px; }
   .btn.ghost { background: transparent; border: 1px solid var(--line); color: var(--paper); box-shadow: none; }
-  .btn.ghost:hover { border-color: var(--you); background: rgba(178,58,214,.08); }
+  .btn.ghost:hover { border-color: var(--you); background: rgba(157,108,236,.08); }
   @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
 
   /* ---------- hero: the WHY ---------- */
@@ -140,7 +140,7 @@
   }
   .contrast > div { padding: 34px 32px; }
   .contrast .not { background: rgba(255,255,255,.015); }
-  .contrast .is { background: linear-gradient(140deg, rgba(139,63,232,.14), rgba(214,48,110,.12)); }
+  .contrast .is { background: linear-gradient(140deg, rgba(157,108,236,.14), rgba(100,216,234,.10)); }
   .contrast h4 { font-size: 13px; font-weight: 800; letter-spacing: .04em; color: var(--muted); margin-bottom: 18px; }
   .contrast ul { list-style: none; display: flex; flex-direction: column; gap: 13px; }
   .contrast li { font-size: 16.5px; display: flex; gap: 11px; align-items: flex-start; }
@@ -161,7 +161,7 @@
   .final { text-align: center; }
   .final-inner {
     border-radius: 28px; padding: 60px 32px 56px;
-    background: linear-gradient(120deg, rgba(139,63,232,.18), rgba(214,48,110,.15));
+    background: linear-gradient(120deg, rgba(157,108,236,.18), rgba(100,216,234,.12));
     border: 1px solid var(--line);
   }
   .final h2 { font-size: clamp(30px, 5.5vw, 50px); line-height: 1.08; }
@@ -221,8 +221,8 @@
     <h1 class="display reveal d2">
       <span class="you">Your stuff</span> is worth<br>
       <svg class="swap-mark" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <g stroke="#B23AD6"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/></g>
-        <g stroke="#D6306E"><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></g>
+        <g stroke="#9d6cec"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/></g>
+        <g stroke="#64d8ea"><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></g>
       </svg>
       more than <span class="them">money</span>
     </h1>
