@@ -136,6 +136,9 @@
   .dc-hint{margin-top:12px;font-size:clamp(11px,2vw,13px);font-weight:800;color:var(--cyan);}
   .dc-arrow{display:inline-block;animation:nudge 1.6s ease-in-out infinite;}
   @keyframes nudge{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
+  .dc-hint2{margin-top:6px;font-size:clamp(10.5px,1.9vw,12.5px);font-weight:700;color:var(--muted);}
+  .dc-arrow-l{display:inline-block;animation:nudgeL 1.6s ease-in-out infinite;}
+  @keyframes nudgeL{0%,100%{transform:translateX(0);}50%{transform:translateX(-6px);}}
 
   /* run: fires the moment the card is swiped right */
   .stage.run .l1{animation:sHide .3s ease forwards;}
@@ -305,11 +308,12 @@
         <g stroke="#67E2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="34,72 14,56 34,40"/><path d="M102 34v8a12 12 0 0 1-12 12H18"/></g>
       </svg>
       <div class="spark sparkL"></div><div class="spark sparkR"></div>
-      <div class="democard" id="democard" role="button" tabindex="0" aria-label="Swipe this card right to make the trade">
-        <div class="dc-emoji">🛹</div>
-        <div class="dc-title">Their skateboard</div>
-        <div class="dc-sub">Your offer: the guitar 🎸</div>
+      <div class="democard" id="democard" role="button" tabindex="0" aria-label="Swipe right to make the trade, swipe left to see the next item">
+        <div class="dc-emoji" id="dcEmoji">🛹</div>
+        <div class="dc-title" id="dcTitle">Their skateboard</div>
+        <div class="dc-sub" id="dcSub">Your offer: the guitar 🎸</div>
         <div class="dc-hint">Swipe right to trade <span class="dc-arrow">➜</span></div>
+        <div class="dc-hint2"><span class="dc-arrow-l">⬅</span> Swipe left if not interested</div>
       </div>
       <div class="badge">It's a swap! 🎉</div>
       <div class="line l2"><span class="p">Trade up</span>, not out.</div>
@@ -438,7 +442,33 @@
     sObs.observe(stage);
   }
 
-  // swipe-right interaction, same gesture as the app
+  // swipe interaction, same gestures as the app: right = trade, left = pass (next pair)
+  var pairs = [
+    { mine:'🎸', theirs:'🛹', title:'Their skateboard',   offer:'Your offer: the guitar 🎸' },
+    { mine:'📷', theirs:'🎮', title:'Their game console', offer:'Your offer: the camera 📷' },
+    { mine:'🧥', theirs:'🎧', title:'Their headphones',   offer:'Your offer: the jacket 🧥' }
+  ];
+  var pi = 0;
+  function applyPair(){
+    var p = pairs[pi];
+    document.querySelector('#stage .objL').textContent = p.mine;
+    document.querySelector('#stage .objR').textContent = p.theirs;
+    document.getElementById('dcEmoji').textContent = p.theirs;
+    document.getElementById('dcTitle').textContent = p.title;
+    document.getElementById('dcSub').textContent = p.offer;
+  }
+  function flyLeft(){
+    card.classList.add('gone');
+    card.style.transform = 'translate(-50%,-50%) translateX(-160%) rotate(-16deg)';
+    setTimeout(function(){
+      pi = (pi + 1) % pairs.length;
+      applyPair();
+      card.style.transform = 'translate(-50%,-50%)';
+      card.style.borderColor = '';
+      card.classList.remove('gone');
+    }, 480);
+  }
+
   var startX = null, dx = 0;
   function flyOff(){
     card.classList.add('gone');
@@ -454,14 +484,14 @@
   card.addEventListener('pointermove', function(e){
     if(startX === null) return;
     dx = e.clientX - startX;
-    if(dx < 0) dx = dx * 0.3; // left drag resists: this demo is about the yes
     card.style.transform = 'translate(-50%,-50%) translateX(' + dx + 'px) rotate(' + (dx * 0.05) + 'deg)';
-    card.style.borderColor = dx > 90 ? 'rgba(18,183,106,.85)' : '';
+    card.style.borderColor = dx > 90 ? 'rgba(18,183,106,.85)' : (dx < -90 ? 'rgba(201,58,71,.85)' : '');
   });
   function release(){
     if(startX === null) return;
     card.classList.remove('drag');
     if(dx > 90){ flyOff(); }
+    else if(dx < -90){ flyLeft(); }
     else {
       card.classList.add('snap');
       card.style.transform = 'translate(-50%,-50%)';
@@ -473,7 +503,9 @@
   card.addEventListener('pointerup', release);
   card.addEventListener('pointercancel', release);
   card.addEventListener('keydown', function(e){
-    if((e.key === 'ArrowRight' || e.key === 'Enter') && !stage.classList.contains('run')) flyOff();
+    if(stage.classList.contains('run')) return;
+    if(e.key === 'ArrowRight' || e.key === 'Enter') flyOff();
+    else if(e.key === 'ArrowLeft') flyLeft();
   });
 
   function resetDemo(){
