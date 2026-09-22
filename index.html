@@ -99,8 +99,6 @@
   .stage .obj{font-size:clamp(52px,9vw,80px);line-height:1;filter:grayscale(1) opacity(.5);will-change:transform;}
   .stage .thought{font-size:clamp(11px,2vw,13px);color:var(--muted);font-weight:700;
     background:rgba(255,255,255,.05);padding:6px 14px;border-radius:999px;border:1px solid var(--line);white-space:nowrap;}
-  .stage .hand{position:absolute;font-size:clamp(28px,5.5vw,42px);opacity:0;bottom:15%;}
-  .stage .hand.L{left:23%;} .stage .hand.R{right:23%;}
   .stage .spark{position:absolute;width:38%;aspect-ratio:1;border-radius:50%;opacity:0;pointer-events:none;
     background:radial-gradient(circle,rgba(18,183,106,.5),rgba(103,226,238,.28) 45%,transparent 70%);}
   .stage .spark.L{left:6%;bottom:2%;} .stage .spark.R{right:6%;bottom:2%;}
@@ -118,23 +116,42 @@
   .stage .replay:hover{background:rgba(255,255,255,.16);}
   .stage .replay:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;}
 
-  .stage.run .l1{animation:sFade .6s ease .2s forwards, sHide .4s ease 3s forwards;}
-  .stage.run .tL{animation:sFade .5s ease .5s forwards, sHide .3s ease 2.1s forwards;}
-  .stage.run .tR{animation:sFade .5s ease .7s forwards, sHide .3s ease 2.1s forwards;}
-  .stage.run .arrows{animation:sArrows 1.5s ease 2s forwards;}
-  .stage.run .objL{animation:sThink 1s ease .5s, sCrossR 1.3s cubic-bezier(.5,0,.3,1.3) 2.2s forwards;}
-  .stage.run .objR{animation:sThink 1s ease .7s, sCrossL 1.3s cubic-bezier(.5,0,.3,1.3) 2.2s forwards;}
-  .stage.run .handL,.stage.run .handR{animation:sHand .5s ease 3.4s forwards;}
-  .stage.run .sparkL,.stage.run .sparkR{animation:sSpark .8s ease 3.5s;}
-  .stage.run .badge{animation:sBadge .7s cubic-bezier(.3,0,.2,1.5) 3.5s forwards;}
-  .stage.run .l2{animation:sFade .7s ease 4.2s forwards;}
+  /* intro: appears when scrolled into view, then waits for YOUR swipe */
+  .stage.ready .l1{opacity:1;transition:opacity .6s ease;}
+  .stage.ready .tL{opacity:1;transition:opacity .6s ease .15s;}
+  .stage.ready .tR{opacity:1;transition:opacity .6s ease .3s;}
+  .stage.ready .democard{opacity:1;transition:opacity .6s ease .45s;}
+
+  /* the swipe demo card */
+  .stage .democard{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(46%,230px);
+    background:var(--surface-2);border:2px solid var(--line);border-radius:18px;padding:18px 16px 16px;text-align:center;
+    opacity:0;cursor:grab;touch-action:pan-y;z-index:4;user-select:none;-webkit-user-select:none;
+    box-shadow:0 18px 50px rgba(0,0,0,.55);}
+  .stage .democard.drag{cursor:grabbing;}
+  .stage .democard.snap{transition:transform .25s ease;}
+  .stage .democard.gone{transition:transform .45s ease,opacity .45s ease;opacity:0;pointer-events:none;}
+  .dc-emoji{font-size:clamp(40px,7vw,58px);line-height:1;}
+  .dc-title{font-weight:800;font-size:clamp(13px,2.4vw,16px);margin-top:10px;color:var(--paper);}
+  .dc-sub{font-size:clamp(11px,2vw,13px);color:var(--muted);margin-top:4px;}
+  .dc-hint{margin-top:12px;font-size:clamp(11px,2vw,13px);font-weight:800;color:var(--cyan);}
+  .dc-arrow{display:inline-block;animation:nudge 1.6s ease-in-out infinite;}
+  @keyframes nudge{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
+
+  /* run: fires the moment the card is swiped right */
+  .stage.run .l1{animation:sHide .3s ease forwards;}
+  .stage.run .tL,.stage.run .tR{animation:sHide .3s ease forwards;}
+  .stage.run .arrows{animation:sArrows 1.2s ease .1s forwards;}
+  .stage.run .objL{animation:sCrossR 1.2s cubic-bezier(.5,0,.3,1.3) .5s forwards;}
+  .stage.run .objR{animation:sCrossL 1.2s cubic-bezier(.5,0,.3,1.3) .5s forwards;}
+  .stage.run .sparkL,.stage.run .sparkR{animation:sSpark .8s ease 1.6s;}
+  .stage.run .badge{animation:sBadge .7s cubic-bezier(.3,0,.2,1.5) 1.6s forwards;}
+  .stage.run .l2{animation:sFade .7s ease 2.3s forwards;}
   @keyframes sFade{to{opacity:1;}}
   @keyframes sHide{to{opacity:0;}}
   @keyframes sThink{0%,100%{transform:translateY(0) rotate(0);}25%{transform:translateY(-8px) rotate(-4deg);}60%{transform:translateY(0) rotate(3deg);}}
   @keyframes sCrossR{0%{transform:translateX(0);filter:grayscale(1) opacity(.5);}55%{transform:translateX(50%) translateY(-26px) scale(1.12) rotate(9deg);}100%{transform:translateX(100%) translateY(0) scale(1) rotate(0);filter:grayscale(0) opacity(1);}}
   @keyframes sCrossL{0%{transform:translateX(0);filter:grayscale(1) opacity(.5);}55%{transform:translateX(-50%) translateY(26px) scale(1.12) rotate(-9deg);}100%{transform:translateX(-100%) translateY(0) scale(1) rotate(0);filter:grayscale(0) opacity(1);}}
   @keyframes sArrows{0%{opacity:0;transform:translate(-50%,-50%) scale(.6);}30%{opacity:1;transform:translate(-50%,-50%) scale(1);}70%{opacity:1;}100%{opacity:0;transform:translate(-50%,-50%) scale(1.1);}}
-  @keyframes sHand{to{opacity:1;}}
   @keyframes sSpark{0%{opacity:0;transform:scale(.3);}40%{opacity:1;transform:scale(1);}100%{opacity:0;transform:scale(1.4);}}
   @keyframes sBadge{0%{opacity:0;transform:translate(-50%,-50%) scale(.4);}60%{opacity:1;transform:translate(-50%,-50%) scale(1.12);}100%{opacity:1;transform:translate(-50%,-50%) scale(1);}}
   @media (prefers-reduced-motion:reduce){
@@ -277,8 +294,8 @@
     <p class="body-lg r d2">No price haggling. No shipping label. No cash changing hands. Just two people saying <strong>yes</strong>, and both walking away with something they actually wanted.</p>
   </div>
   <div class="wrap stage-holder r d1">
-    <div class="stage" id="stage" role="img"
-      aria-label="A guitar nobody's using and a skateboard nobody's using face off, each thinking 'nobody wants me'. The swap arrows fire, they cross sides, and both land in hands that light up. It's a swap. Nobody paid anything.">
+    <div class="stage" id="stage"
+      aria-label="Interactive demo: swipe the card right to trade a guitar for a skateboard, just like in the app.">
       <div class="mid"></div>
       <div class="line l1">Nobody's using either one…</div>
       <div class="side L"><div class="obj objL">🎸</div><div class="thought tL">"nobody wants me"</div></div>
@@ -287,12 +304,16 @@
         <g stroke="#9D6CEC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="86,8 106,24 86,40"/><path d="M18 46V38a12 12 0 0 1 12-12h72"/></g>
         <g stroke="#67E2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="34,72 14,56 34,40"/><path d="M102 34v8a12 12 0 0 1-12 12H18"/></g>
       </svg>
-      <div class="hand handL">🙌</div><div class="hand handR">🙌</div>
       <div class="spark sparkL"></div><div class="spark sparkR"></div>
+      <div class="democard" id="democard" role="button" tabindex="0" aria-label="Swipe this card right to make the trade">
+        <div class="dc-emoji">🛹</div>
+        <div class="dc-title">Their skateboard</div>
+        <div class="dc-sub">Your offer: the guitar 🎸</div>
+        <div class="dc-hint">Swipe right to trade <span class="dc-arrow">➜</span></div>
+      </div>
       <div class="badge">It's a swap! 🎉</div>
       <div class="line l2"><span class="p">Trade up</span>, not out.</div>
-      <button class="replay" aria-label="Replay animation"
-        onclick="var s=document.getElementById('stage');s.classList.remove('run');void s.offsetWidth;s.classList.add('run');">↻</button>
+      <button class="replay" aria-label="Reset demo" onclick="resetDemo()">↻</button>
     </div>
   </div>
 </section>
@@ -407,13 +428,61 @@
   },{threshold:.18});
   document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
 
-  // play the embedded animation when it scrolls into view
+  // the demo arms when it scrolls into view, then waits for the visitor's swipe
   var stage = document.getElementById('stage');
+  var card = document.getElementById('democard');
   if(stage){
     var sObs = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ stage.classList.add('run'); sObs.disconnect(); } });
+      es.forEach(function(e){ if(e.isIntersecting){ stage.classList.add('ready'); sObs.disconnect(); } });
     },{threshold:.4});
     sObs.observe(stage);
+  }
+
+  // swipe-right interaction, same gesture as the app
+  var startX = null, dx = 0;
+  function flyOff(){
+    card.classList.add('gone');
+    card.style.transform = 'translate(-50%,-50%) translateX(160%) rotate(16deg)';
+    stage.classList.add('run');
+  }
+  card.addEventListener('pointerdown', function(e){
+    if(stage.classList.contains('run')) return;
+    startX = e.clientX; dx = 0;
+    card.classList.add('drag');
+    try{ card.setPointerCapture(e.pointerId); }catch(err){}
+  });
+  card.addEventListener('pointermove', function(e){
+    if(startX === null) return;
+    dx = e.clientX - startX;
+    if(dx < 0) dx = dx * 0.3; // left drag resists: this demo is about the yes
+    card.style.transform = 'translate(-50%,-50%) translateX(' + dx + 'px) rotate(' + (dx * 0.05) + 'deg)';
+    card.style.borderColor = dx > 90 ? 'rgba(18,183,106,.85)' : '';
+  });
+  function release(){
+    if(startX === null) return;
+    card.classList.remove('drag');
+    if(dx > 90){ flyOff(); }
+    else {
+      card.classList.add('snap');
+      card.style.transform = 'translate(-50%,-50%)';
+      card.style.borderColor = '';
+      setTimeout(function(){ card.classList.remove('snap'); }, 260);
+    }
+    startX = null; dx = 0;
+  }
+  card.addEventListener('pointerup', release);
+  card.addEventListener('pointercancel', release);
+  card.addEventListener('keydown', function(e){
+    if((e.key === 'ArrowRight' || e.key === 'Enter') && !stage.classList.contains('run')) flyOff();
+  });
+
+  function resetDemo(){
+    stage.classList.remove('run');
+    card.classList.remove('gone','snap','drag');
+    card.style.transform = 'translate(-50%,-50%)';
+    card.style.borderColor = '';
+    void stage.offsetWidth;
+    stage.classList.add('ready');
   }
 </script>
 </body>
